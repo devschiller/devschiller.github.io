@@ -39,8 +39,8 @@ h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 600; line-heigh
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
-.brand { font-family: Fraunces, Georgia, serif; font-weight: 600; text-decoration: none; font-size: 1.1rem; }
-.nav nav a { margin-left: 22px; text-decoration: none; color: var(--muted); font-weight: 500; }
+.brand { white-space: nowrap; font-family: Fraunces, Georgia, serif; font-weight: 600; text-decoration: none; font-size: 1.6rem; letter-spacing: -0.01em; }
+.nav nav a { white-space: nowrap; margin-left: 22px; text-decoration: none; color: var(--muted); font-weight: 500; }
 .nav nav a:hover { color: var(--text); }
 
 main { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
@@ -93,10 +93,18 @@ h2 { font-size: 2rem; margin: 0 0 8px; }
 footer { text-align: center; color: var(--muted); padding: 40px 16px; font-size: .9rem; }
 
 @media (max-width: 640px) {
-  .nav nav a { margin-left: 14px; }
+  .nav { gap: 14px; }
+  .nav nav { display: flex; gap: 12px; }
+  .nav nav a { margin-left: 0; font-size: .82rem; }
+  .brand { font-size: 1.1rem; }
   .timeline article, .two-col { grid-template-columns: 1fr; gap: 6px; }
   .two-col { gap: 24px; }
   section { padding: 56px 0; }
+}
+@media (max-width: 380px) {
+  .brand { font-size: 1rem; }
+  .nav nav { gap: 9px; }
+  .nav nav a { font-size: .76rem; }
 }
 
 .learn-more { margin: 18px 0 0; }
